@@ -1,0 +1,21 @@
+#!/bin/bash
+
+PIDFILE=springappmodules.pid
+
+case $1 in
+	start)
+	    java -jar target/web-0.0.1-SNAPSHOT.jar > /dev/null &
+	    #Get its pid and store 
+	    echo $! > ${PIDFILE} &
+	    echo "Application started successfully"
+	;;
+	stop)
+	kill -15 `cat ${PIDFILE}`
+	rm ${PIDFILE}
+	echo "Application stopped successfully"
+	;;
+	*)
+	  echo "usage: appscript {start | stop}" ;;
+esac
+exit 0
+

@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+/web/target/
+/.idea/
+/employees.db.mv.db
+/employees.db.trace.db
+/domain/target/
+/persistence/target/
